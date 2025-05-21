@@ -1,113 +1,111 @@
-# Machinedrum Randomizer
+# **Machinedrum Randomizer**
 
-A companion tool for Elektron Machinedrum users — built for Monome Norns — to randomize CC values across the machine’s powerful MIDI parameters.
+**Machinedrum Randomizer** is a MIDI CC randomizer tool for **Elektron Machinedrum** (or any CC-capable synth), designed for fast sound exploration and live performance.  
+Send randomized MIDI CC values to multiple parameters across pages and subpages for unpredictable sonic results.
 
-Developed with live experimentation in mind, this script allows fast access to synth, filter, and effects parameter changes using pre-mapped CC sets. It’s designed to spark unexpected textures and variations, ideal for performance or exploratory patch creation.
+**Author:** HANJO – Tokyo, Japan
 
----
-
-## ✨ Features
-
-- 🎛 Page-based CC organization:
-  - **SYNTH**, **FILTER**, **EFFECTS**
-- 🧱 Each page has up to **4 subpages** (A–D), each with its own set of 8 CCs
-- 🎲 Instant CC randomization with `K3`
-- 🎚 Edit mode toggling with `K2`:
-  - `CC`: adjust CC number
-  - `VAL`: adjust current value
-  - `MIDI`: change output MIDI channel
-- 🔁 Subpage switching by holding `K2` and turning `E2`
-- 💾 Independent value storage per subpage
-- 🧩 Easily expandable structure
+![Machinedrum Randomizer Screenshot](./screenshot.png)
 
 ---
 
-## 📟 Controls
+## **FEATURES**
 
-### Encoders
-
-- `E1`: Change Page (SYNTH, FILTER, EFFECTS)
-- `E2`: Move between slots (or subpages when holding `K2`)
-- `E3`: Adjust parameter (CC number, value, or MIDI channel depending on mode)
-
-### Keys
-
-- `K2`: Hold to enter subpage scroll mode (with `E2`). Press to cycle `edit_mode`:
-  - `CC` → `VAL` → `MIDI`
-- `K3`: Roll random values across the 8 active parameters in current subpage
+- **`K3`**: Randomize all 8 parameter values in the current subpage
+- **`E1`**: Change main page (`SYNTH`, `FILTER`, `EFFECTS`)
+- **`E2`**: Select parameter slot (1–8) or scroll subpages (`A–D`) when holding `K2`
+- **`K2`**: Toggle edit mode:
+  - `CC`: Change CC target
+  - `VAL`: Change value
+  - `MIDI`: Change MIDI channel
+- **`E3`**: Adjust parameter (CC number, value, or MIDI channel depending on mode)
 
 ---
 
-## 🎛 CC Mapping
+## **CC MAPPING**
 
-Each page is divided into subpages with fixed CC sets.
+Each page has 4 subpages (A–D), each containing 8 fixed CC numbers.
 
 ### SYNTH Page
 
-| Subpage | CC Numbers                    |
-|---------|-------------------------------|
-| A       | 16–23                         |
-| B       | 40–47                         |
-| C       | 72–78                         |
-| D       | 96–103                        |
+| Subpage | CC Numbers       |
+|---------|------------------|
+| A       | 16–23            |
+| B       | 40–47            |
+| C       | 72–79            |
+| D       | 96–103           |
 
 ### FILTER Page
 
-| Subpage | CC Numbers                    |
-|---------|-------------------------------|
-| A       | 24–31                         |
-| B       | 48–55                         |
-| C       | 80–87                         |
-| D       | 104–111                       |
+| Subpage | CC Numbers       |
+|---------|------------------|
+| A       | 24–31            |
+| B       | 48–55            |
+| C       | 80–87            |
+| D       | 104–111          |
 
 ### EFFECTS Page
 
-| Subpage | CC Numbers                    |
-|---------|-------------------------------|
-| A       | 32–39                         |
-| B       | 56–63                         |
-| C       | 88–95                         |
-| D       | 112–119                       |
+| Subpage | CC Numbers       |
+|---------|------------------|
+| A       | 32–39            |
+| B       | 56–63            |
+| C       | 88–95            |
+| D       | 112–119          |
 
 ---
 
-## 🎚 Requirements
+## **OUTPUTS**
 
-- [Monome Norns](https://monome.org/norns/)
-- Elektron Machinedrum with MIDI input connected
-- MIDI interface (USB MIDI to DIN or similar)
-
----
-
-## 🛠 Installation
-
-1. Download or clone this repo
-2. Place the folder into `dust/code/machinedrum_randomizer/`
-3. Launch from the `MAIDEN` or Norns menu
+- Sends randomized or manually set **MIDI CC messages** over USB
+- Default **MIDI Channel**: `9` (adjustable per subpage)
 
 ---
 
-## 📡 MIDI Setup
+## **UPDATES**
 
-- Connect your MIDI interface to Machinedrum
-- Use `PARAMS > MIDI Channel` to select output channel
-- Ensure your Machinedrum is set to receive external CC on that channel
-
----
-
-## 🧪 Known Quirks / Ideas
-
-- No per-patch save yet — values reset on reboot
-- Could be extended with performance macros, per-track focus, or parameter locks
-- Randomization range adjustable via parameters
+**v1.0** Initial release  
+More features to come (parameter locks, save/recall, performance macros)
 
 ---
 
-## 🧑‍💻 Credits
+## **TECHNICAL DETAILS**
 
-Developed by [David](https://github.com/hanjo-synth), Tokyo  
-Forked and extended from `Mnmpatch` (Monomachine)
+- Organizes 96 CC values across 3 pages and 12 subpages
+- Remembers values per subpage
+- Flexible edit system: toggle between CC number, value, and MIDI channel
+- Designed for fast tweaking or total chaos during live sets
 
-Contributions, pull requests, and forks welcome!
+---
+
+## **REQUIREMENTS**
+
+- **Monome Norns** (any model)
+- **Elektron Machinedrum** or other MIDI CC-capable gear
+- USB MIDI interface (for DIN MIDI out if needed)
+
+---
+
+## **INSTALLATION**
+
+1. Clone or download this repository into your `dust/code/` folder on Norns
+2. Run the script from the `SELECT` screen
+
+---
+
+## **USAGE TIPS**
+
+- Hold **`K2`** and turn **`E2`** to quickly flip between subpages (A–D)
+- Use **`K3`** often for sonic surprises
+- Use subpages to organize parameter groups (e.g., pitch, timbre, modulation)
+- Set MIDI channels per subpage to control multiple tracks
+
+---
+
+## **CREDITS**
+
+Created by **HANJO**  
+Built as a sister tool to [MNMPatch](https://github.com/hanjo-synth/Mnmpatch) for Elektron Monomachine  
+Tested on Machinedrum MKII
 
 ---
