@@ -5,7 +5,6 @@
 -- K1 == Track select
 -- K2 + K3 == Settings
 -- K2 + E2 == Page select
--- K1 == Track select
 
 local midi_out
 local channel = 1
