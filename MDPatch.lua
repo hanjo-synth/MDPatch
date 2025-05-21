@@ -1,6 +1,6 @@
 -- Machinedrum Randomizer v1.4
 -- HANJO, Tokyo, Japan
--- Synthetic Juddah, Ural Mountains, Russia
+-- SyntheticJudah, Ural Mountains, Russia
 -- 
 -- K1 == Track select
 -- K2 + K3 == Settings
