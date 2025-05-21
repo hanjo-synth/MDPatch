@@ -24,34 +24,53 @@ Send randomized MIDI CC values to multiple parameters across pages and subpages 
 
 ## **CC MAPPING**
 
-Each page has 4 subpages (A–D), each containing 8 fixed CC numbers.
+Each page contains 4 subpages (`A–D`), and each subpage controls 8 fixed CC numbers.  
+The Machinedrum assigns tracks based on **MIDI channel**, starting from the **Base Channel**.
 
-### SYNTH Page
+### Track Assignment by MIDI Channel
 
-| Subpage | CC Numbers       |
-|---------|------------------|
-| A       | 16–23            |
-| B       | 40–47            |
-| C       | 72–79            |
-| D       | 96–103           |
+- **Base Channel**  
+  - A → BD (Bass Drum)  
+  - B → SD (Snare Drum)  
+  - C → HT (High Tom)  
+  - D → MT (Mid Tom)
 
-### FILTER Page
+- **Base Channel + 1**  
+  - A → LT (Low Tom)  
+  - B → CP (Clap)  
+  - C → RS (Rim Shot)  
+  - D → CB (Cowbell)
 
-| Subpage | CC Numbers       |
-|---------|------------------|
-| A       | 24–31            |
-| B       | 48–55            |
-| C       | 80–87            |
-| D       | 104–111          |
+- **Base Channel + 2**  
+  - A → CH (Closed Hi-hat)  
+  - B → OH (Open Hi-hat)  
+  - C → RC (Ride Cymbal)  
+  - D → CC (Crash Cymbal)
 
-### EFFECTS Page
+- **Base Channel + 3**  
+  - A → M1  
+  - B → M2  
+  - C → M3  
+  - D → M4  
+  *(Used for RAM Machines or CTR Machines depending on Machinedrum config)*
 
-| Subpage | CC Numbers       |
-|---------|------------------|
-| A       | 32–39            |
-| B       | 56–63            |
-| C       | 88–95            |
-| D       | 112–119          |
+### Subpage CC Numbers
+
+| Page     | Subpage | CC Numbers       |
+|----------|---------|------------------|
+| SYNTH    | A       | 16–23            |
+|          | B       | 40–47            |
+|          | C       | 72–79            |
+|          | D       | 96–103           |
+| FILTER   | A       | 24–31            |
+|          | B       | 48–55            |
+|          | C       | 80–87            |
+|          | D       | 104–111          |
+| EFFECTS  | A       | 32–39            |
+|          | B       | 56–63            |
+|          | C       | 88–95            |
+|          | D       | 112–119          |
+
 
 ---
 
