@@ -1,5 +1,4 @@
--- Machinedrum Randomizer (adapted from Monomachine version)
--- v1.3 - Added subpage support for FILTER and EFFECTS
+-- Machinedrum Randomizer v1.3
 -- HANJO, Tokyo, Japan
 
 local midi_out
