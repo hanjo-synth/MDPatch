@@ -5,7 +5,7 @@ Built for fast sonic experimentation and live performance, it allows direct acce
 
 **Authors:** HANJO – Tokyo, Japan & Synthetic Juddah – Ural Mountains, Russia
 
-![Machinedrum Randomizer Screenshot](./screenshot.png)
+![Machinedrum Randomizer Screenshot](./MDPatch.png)
 
 ---
 
