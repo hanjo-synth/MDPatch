@@ -105,7 +105,5 @@ More features to come (parameter locks, save/recall, performance macros)
 ## **CREDITS**
 
 Created by **HANJO**  
-Built as a sister tool to [MNMPatch](https://github.com/hanjo-synth/Mnmpatch) for Elektron Monomachine  
-Tested on Machinedrum MKII
 
 ---
