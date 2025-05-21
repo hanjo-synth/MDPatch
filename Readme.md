@@ -3,7 +3,7 @@
 **Machinedrum Randomizer** is a powerful and flexible MIDI CC randomizer for the **Elektron Machinedrum** (or any CC-capable synth).  
 Built for fast sonic experimentation and live performance, it allows direct access to every track and MIDI CC group through a responsive UI.
 
-**Authors:** HANJO – Tokyo, Japan & Synthetic Juddah – Ural Mountains, Russia
+**Authors:** HANJO – Tokyo, Japan & SyntheticJudah – Ural Mountains, Russia
 
 ![Machinedrum Randomizer Screenshot](./MDPatch.png)
 
