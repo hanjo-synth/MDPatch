@@ -1,9 +1,9 @@
 # **Machinedrum Randomizer**
 
-**Machinedrum Randomizer** is a MIDI CC randomizer tool for **Elektron Machinedrum** (or any CC-capable synth), designed for fast sound exploration and live performance.  
-Send randomized MIDI CC values to multiple parameters across pages and subpages for unpredictable sonic results.
+**Machinedrum Randomizer** is a powerful and flexible MIDI CC randomizer for the **Elektron Machinedrum** (or any CC-capable synth).  
+Built for fast sonic experimentation and live performance, it allows direct access to every track and MIDI CC group through a responsive UI.
 
-**Authors:** HANJO – Tokyo, Japan & Synthetic Juddah, Ural Mountains, Russia
+**Authors:** HANJO – Tokyo, Japan & Synthetic Juddah – Ural Mountains, Russia
 
 ![Machinedrum Randomizer Screenshot](./screenshot.png)
 
@@ -11,118 +11,112 @@ Send randomized MIDI CC values to multiple parameters across pages and subpages 
 
 ## **FEATURES**
 
-- **`K3`**: Randomize all 8 parameter values in the current subpage
-- **`E1`**: Change main page (`SYNTH`, `FILTER`, `EFFECTS`)
-- **`E2`**: Select parameter slot (1–8) or scroll subpages (`A–D`) when holding `K2`
-- **`K2`**: Toggle edit mode:
-  - `CC`: Change CC target
-  - `VAL`: Change value
-  - `MIDI`: Change MIDI channel
-- **`E3`**: Adjust parameter (CC number, value, or MIDI channel depending on mode)
+- **`K1`**: Select Machinedrum track (BD, SD, etc.)
+- **`K2 + E2`**: Change main page (`SYNTH`, `EFFECTS`, `ROUTING`)
+- **`K3`**: Randomize all 8 parameters in the current subpage
+- **`K2 + K3`**: Open Settings menu
+- **`E1`**: Scroll between parameter slots
+- **`K2`**: Toggle edit mode (`CC`, `VAL`, `MIDI`)
+- **`E2`**: Select page or menu item (depending on context)
+- **`E3`**: Adjust value of current item (parameter value, CC number, or MIDI channel)
+
+---
+
+## **TRACK & CHANNEL MAPPING**
+
+Each Machinedrum voice is assigned by track and MIDI channel.
+
+### Track Assignments (Based on Base MIDI Channel)
+
+| Track     | MIDI Channel Offset | Subpage |
+|-----------|---------------------|---------|
+| 1–4       | Base + 0            | A–D     |
+| 5–8       | Base + 1            | A–D     |
+| 9–12      | Base + 2            | A–D     |
+| 13–16     | Base + 3            | A–D     |
+
+Examples:
+
+- BD = Track 1 → Subpage A on Base Channel  
+- SD = Track 2 → Subpage B on Base Channel  
+- CH = Track 9 → Subpage A on Base Channel + 2  
+- M4 = Track 16 → Subpage D on Base Channel + 3  
 
 ---
 
 ## **CC MAPPING**
 
-Each page contains 4 subpages (`A–D`), and each subpage controls 8 fixed CC numbers.  
-The Machinedrum assigns tracks based on **MIDI channel**, starting from the **Base Channel**.
-
-### Track Assignment by MIDI Channel
-
-- **Base Channel**  
-  - A → BD (Bass Drum)  
-  - B → SD (Snare Drum)  
-  - C → HT (High Tom)  
-  - D → MT (Mid Tom)
-
-- **Base Channel + 1**  
-  - A → LT (Low Tom)  
-  - B → CP (Clap)  
-  - C → RS (Rim Shot)  
-  - D → CB (Cowbell)
-
-- **Base Channel + 2**  
-  - A → CH (Closed Hi-hat)  
-  - B → OH (Open Hi-hat)  
-  - C → RC (Ride Cymbal)  
-  - D → CC (Crash Cymbal)
-
-- **Base Channel + 3**  
-  - A → M1  
-  - B → M2  
-  - C → M3  
-  - D → M4  
-  *(Used for RAM Machines or CTR Machines depending on Machinedrum config)*
-
-### Subpage CC Numbers
+Organized into 3 pages (`SYNTH`, `EFFECTS`, `ROUTING`), each with 4 subpages (`A–D`) and 8 CC targets per subpage.
 
 | Page     | Subpage | CC Numbers       |
 |----------|---------|------------------|
 | SYNTH    | A       | 16–23            |
 |          | B       | 40–47            |
-|          | C       | 72–79            |
+|          | C       | 72–79 *(one dup)*|
 |          | D       | 96–103           |
-| FILTER   | A       | 24–31            |
+| EFFECTS  | A       | 24–31            |
 |          | B       | 48–55            |
 |          | C       | 80–87            |
 |          | D       | 104–111          |
-| EFFECTS  | A       | 32–39            |
+| ROUTING  | A       | 32–39            |
 |          | B       | 56–63            |
 |          | C       | 88–95            |
 |          | D       | 112–119          |
 
+*Note: Some CC ranges overlap or repeat intentionally to reflect Machinedrum's flexible architecture.*
 
 ---
 
-## **OUTPUTS**
+## **OUTPUT**
 
-- Sends randomized or manually set **MIDI CC messages** over USB
-- Default **MIDI Channel**: `9` (adjustable per subpage)
-
----
-
-## **UPDATES**
-
-**v1.0** Initial release  
-More features to come (parameter locks, save/recall, performance macros)
+- Sends **MIDI CC messages** over USB
+- Each subpage corresponds to a specific track and MIDI channel
+- Randomized or manually adjusted values are instantly transmitted
 
 ---
 
-## **TECHNICAL DETAILS**
+## **SETTINGS MENU**
 
-- Organizes 96 CC values across 3 pages and 12 subpages
-- Remembers values per subpage
-- Flexible edit system: toggle between CC number, value, and MIDI channel
-- Designed for fast tweaking or total chaos during live sets
+Accessed via **`K2 + K3`**, the menu lets you fine-tune global behavior:
+
+- **MD Base Ch.** – Sets the starting channel (1–16)
+- **CC Val. Min.** – Minimum value for randomization (1–127)
+- **CC Val. Max.** – Maximum value for randomization (1–127)
+
+---
+
+## **VERSION**
+
+**v1.4** – Latest release  
+- New routing page  
+- Full track select system  
+- Menu system overhaul  
+- Enhanced CC control and min/max value range  
+- Improved UI performance
 
 ---
 
 ## **REQUIREMENTS**
 
 - **Monome Norns** (any model)
-- **Elektron Machinedrum** or other MIDI CC-capable gear
-- USB MIDI interface (for DIN MIDI out if needed)
+- **Elektron Machinedrum** (or other MIDI CC device)
+- USB MIDI (DIN adapter if needed)
 
 ---
 
 ## **INSTALLATION**
 
-1. Clone or download this repository into your `dust/code/` folder on Norns
-2. Run the script from the `SELECT` screen
+1. Clone or download this repository into your `dust/code/` folder on your Norns
+2. Launch the script via the SELECT screen
 
 ---
 
-## **USAGE TIPS**
+## **TIPS & TRICKS**
 
-- Hold **`K2`** and turn **`E2`** to quickly flip between subpages (A–D)
-- Use **`K3`** often for sonic surprises
-- Use subpages to organize parameter groups (e.g., pitch, timbre, modulation)
-- Set MIDI channels per subpage to control multiple tracks
-
----
-
-## **CREDITS**
-
-Created by **HANJO**  
+- Quickly flip between instruments with **`K1`**
+- Randomize sounds instantly with **`K3`**
+- Use pages to organize control sets (e.g., pitch, FX, routing)
+- Fine-tune randomness using the **menu**
+- Multiple Machinedrum tracks can be controlled by setting different MIDI channels per subpage
 
 ---
