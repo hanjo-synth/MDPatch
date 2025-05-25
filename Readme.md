@@ -67,6 +67,12 @@ Organized into 3 pages (`SYNTH`, `EFFECTS`, `ROUTING`), each with 4 subpages (`A
 
 ---
 
+### Video
+
+[![Watch the demo](https://img.youtube.com/vi/tShiKs0ePec/maxresdefault.jpg)](https://youtu.be/tShiKs0ePec?si=wnLqAmJ0YxB_HlnE)
+
+---
+
 ## **OUTPUT**
 
 - Sends **MIDI CC messages** over USB
